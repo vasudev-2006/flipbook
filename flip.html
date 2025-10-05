@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Story Website</title>
+
+<style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:black; }
+    header { background:#333; color:white; text-align:center; padding:20px; }
+    section { max-width:500px; margin:30px auto; padding:20px; background:#fff; border-radius:5px; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
+    h2 { text-align:center; margin-bottom:10px; }
+    #flipbook { text-align:center; }
+    #flipbook img { width:80%; max-width:500px; border:2px solid #333; border-radius:8px; }
+    button { padding:10px 20px; margin:10px; font-size:16px; cursor:pointer; border-radius:5px; border:none; background:#333; color:#fff; }
+    button:hover { background:#555; }
+    .video-container, .image-gallery, .animation-container { text-align:center; margin-bottom:20px; }
+    .image-gallery img { width:400px; margin:5px; border-radius:8px; transition: transform 0.3s; }
+    .image-gallery img:hover { transform: scale(1.1); }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>STELLAR STORIES </h1>
+</header>
+
+<!-- Flipbook Section -->
+<section id="flipbook">
+    <h2>Flipbook</h2>
+    <img id="page" src="C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 12.42.45 AM.jpeg" alt="Story Page">
+    <div>
+        <button onclick="prevPage()">◀ Previous</button>
+        <button onclick="nextPage()">Next ▶</button>
+    </div>
+</section>
+
+<!-- Video Section -->
+<section class="video-container">
+    <h2> Video</h2>
+    <video width="500" controls>
+        <source src="C:\Users\MALAVIKA\Downloads\WhatsApp Video 2025-10-04 at 10.53.39 PM.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p>Watch This video to understand more about Coronal Mass Ejection(CME) and SolarFlare.</p>
+</section>
+
+<!-- Animation Section -->
+<section class="animation-container">
+    <h2>Animations</h2>
+    <!-- GIF Example -->
+      <img src="C:\Users\MALAVIKA\Downloads\solar.gif" alt="Animation" width="400">
+      <h4> Radiation Storms</h4>
+<p>Solar eruptions can accelerate charged particles — electrons and protons — into space at incredibly high speeds, initiating a radiation storm.
+
+The fastest particles travel so quickly they can zip across roughly 93 million miles from the Sun to Earth in about 30 minutes or less</p>
+      <img src="C:\Users\MALAVIKA\Downloads\smax.gif" alt="Animation" width="400">
+    <h4> Solar activity cycle </h4>
+<p>Solar storms and their related phenomena all wax and wane with the Sun’s 11-year cycle of activity. Such events are more common during solar maximum (or peak of the solar cycle) but are less frequent during solar minimum (or low point of the cycle).
+
+Sunspots, or dark “blemishes” on the Sun, also increase during solar maximum and mark magnetically active regions on the Sun, which give rise to solar eruptions. When a large group of sunspots or a particularly active region on the Sun comes into view, it’s a good time to be on the lookout for solar storms that could be headed our way.
+
+</p>
+      <img src="C:\Users\MALAVIKA\Downloads\flare.gif" alt="Animation" width="400">
+    <h4> Solar Flare </h4>
+<p>A solar flare is an intense burst of radiation, or light, on the Sun. These flashes span the electromagnetic spectrum — including X-rays, gamma rays, radio waves, and ultraviolet and visible light.
+
+Solar flares are the most powerful explosions in the solar system — the biggest ones can have as much energy as a billion hydrogen bombs.</p>
+  <img src="C:\Users\MALAVIKA\Downloads\cme.gif" alt="Animation" width="400">
+  <h4> Coronal Mass Ejection (CME)</h4>
+  <p>A coronal mass ejection (CME) is an enormous cloud of electrically charged gas, called plasma, that erupts from the Sun. A single coronal mass ejection can blast billions of tons of material into the solar system all at once.
+
+CMEs occur in the outer atmosphere of the Sun, called the corona, and often look like giant bubbles bursting from the Sun.
+
+Video: Several coronal mass ejections erupted from the Sun between Oct. 25 and 28, 2013. This movie superimposes an extreme ultraviolet view of the Sun from the Solar Dynamic Observatory (center) on a visible-light view of the solar corona from the Solar and Heliospheric Observatory.</p>
+    <!-- Lottie Example -->
+    <div id="solar animation" style="width:500px; height:200px; margin:10px;"></div>
+</section>
+
+<!-- Image Gallery Section -->
+<section class="image-gallery">
+    <h2>Story Illustrations</h2>
+    <figure>
+    <img src="C:\Users\MALAVIKA\Desktop\images\solar flare.png" alt="Sun's magnetic field">
+    <figcaption>sun's magnetic field</figcaption>
+    </figure>
+   <figure>
+ <img src="C:\Users\MALAVIKA\Downloads\WhatsApp Image 2025-10-04 at 10.20.26 PM (1).jpeg" alt="Scene 2">
+    <figcaption>Radiation Storm</figcaption>
+    </figure>
+    <figure>
+    <img src="C:\Users\MALAVIKA\Downloads\WhatsApp Image 2025-10-04 at 10.20.26 PM.jpeg" alt="Scene 3">
+    <figcaption>coronal mass ejection (CME)</figcaption>
+    </figure>   
+    <figure>
+    <img src="C:\Users\MALAVIKA\Downloads\WhatsApp Image 2025-10-04 at 10.20.25 PM.jpeg" alt="Scene 2">
+    <figcaption>solar flare</figcaption>
+    </figure>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.1/lottie.min.js"></script>
+<script>
+    // Flipbook functionality
+    let currentPage = 0;
+    const pages = [
+       "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 12.42.45 AM.jpeg" ,
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.36 AM.jpeg",
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.37 AM.jpeg",
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.37 AM (1).jpeg",
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.38 AM.jpeg",
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.38 AM (1).jpeg",
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.38 AM (2).jpeg",
+         "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.39 AM.jpeg",
+         "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.39 AM (1).jpeg",
+         "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.39 AM (2).jpeg",
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.40 AM.jpeg",
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.40 AM (1).jpeg",
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.41 AM.jpeg",
+         "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.41 AM (1).jpeg",
+         "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.41 AM (2).jpeg",
+         "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.42 AM.jpeg",
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.42 AM (1).jpeg",
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.42 AM (2).jpeg",
+        "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.43 AM.jpeg",
+         "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.43 AM (1).jpeg",
+         "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.44 AM.jpeg",
+         "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 1.20.44 AM (1).jpeg",
+         "C:\\Users\\MALAVIKA\\Downloads\\WhatsApp Image 2025-10-05 at 12.49.24 AM.jpeg",
+        // Add all your flipbook images here
+    ];
+
+    function showPage() {
+        document.getElementById('page').src = pages[currentPage];
+    }
+
+    function nextPage() {
+        if(currentPage < pages.length - 1) currentPage++;
+        showPage();
+    }
+
+    function prevPage() {
+        if(currentPage > 0) currentPage--;
+        showPage();
+    }
+
+    // Lottie animation example
+    lottie.loadAnimation({
+        container: document.getElementById('lottieAnimation'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'animations/example.json' // Replace with your Lottie JSON file
+    });
+</script>
+
+</body>
+</html>
